@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>Bookshop - Your Online Bookshop</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<!--ng-init 可以初始化对象，也可以初始化数组-->
+<div class="container" ng-init="books1=['Effective Java','Year without Pants','Confessions of public speaker','JavaScript Good Parts']">
+    <h2>Your Online Bookshop</h2>
+    <ul class="unstyled">
+        <li ng-repeat="book in books1">
+            {{book}}
+        </li>
+    </ul>
+</div>
+
+<!--控制器用于通过js注入对象-->
+<div class="container" ng-controller="BookCtrl">
+    <h2>Your Online Bookshop</h2>
+    <input type="search" ng-model="criteria">
+    <ul class="unstyled">
+        <li ng-repeat="book in books|filter:criteria| orderBy:'name'">
+            <span>{{book.name}} written by {{book.author | uppercase}}</span>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="../js/tryAngularJSApp.js"></script>
+</body>
+</html>

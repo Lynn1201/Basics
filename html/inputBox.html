@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="screen" /> &lt;!&ndash;bootstrap样式&ndash;&gt;-->
+    <link rel="stylesheet" href="../css/inputBoxStyle.css" media="screen" /> <!--引入为本页面设置的样式-->
+    <script type="text/javascript" src="../js/inputBoxJS.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <p class="inputHint">
+        <label id="commentLeft" for="inputBox">请填写备注</label>
+        <label id="commentRight" for="inputBox">(0/200)</label>
+    </p>
+    <p>
+        <textarea id="inputBox" type="text" placeholder='最多输入200个字符' maxlength="200" oninput="calculateInputNumber()"></textarea>
+    </p>
+</body>
+</html>
